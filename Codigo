@@ -1,0 +1,9 @@
+public char calcularDigitoVerificador() {
+        int M = 0, S = 1;
+        int T = Integer.parseInt(getRut());
+        for (; T != 0; T /= 10) {
+            S = (S + T % 10 * (9 - M++ % 6)) % 11;
+        }
+        return ((char) (S != 0 ? S + 47 : 75));
+        
+    }
